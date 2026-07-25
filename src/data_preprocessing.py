@@ -16,18 +16,21 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     # Drop exact duplicate rows
     df = df.drop_duplicates()
 
-    # Data-entry errors: a handful of rows have implausible age/employment length
+    # Data-entry error: 5 rows report an implausible age (max was 144).
     df = df[df["person_age"] <= 100]
+
+    # person_emp_length: drop the 887 rows missing this value, then the 2 rows
+    # with implausible values (max was 123 years). Dropping is acceptable here
+    # because together they are under 3% of the data.
+    df = df.dropna(subset=["person_emp_length"])
     df = df[df["person_emp_length"] <= 60]
 
-    # Missing values: loan_int_rate depends on loan_grade, so impute per grade
+    # loan_int_rate is missing for ~9.6% of rows - too many to drop. Interest rate
+    # is strongly determined by loan grade (median 7.5% for A vs 20.2% for G), so
+    # impute each missing value with the median rate of its own grade rather than
+    # a single global median.
     df["loan_int_rate"] = df.groupby("loan_grade")["loan_int_rate"].transform(
         lambda s: s.fillna(s.median())
-    )
-
-    # person_emp_length: impute with overall median
-    df["person_emp_length"] = df["person_emp_length"].fillna(
-        df["person_emp_length"].median()
     )
 
     return df.reset_index(drop=True)

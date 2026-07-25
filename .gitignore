@@ -11,3 +11,7 @@ models/*
 # small (~1.8MB) tuned XGBoost; committed so the deployed app can load it
 !models/best_model.joblib
 .env
+
+# personal interview-prep notes - keep out of the public repo
+INTERVIEW_HANDBOOK.md
+project-cutomerloanrisk.pdf
