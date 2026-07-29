@@ -7,6 +7,9 @@ import joblib
 import pandas as pd
 import streamlit as st
 
+# Must be the first Streamlit command in the script.
+st.set_page_config(page_title="LendIQ", page_icon="📊")
+
 MODEL_PATH = "models/best_model.joblib"
 
 
@@ -19,7 +22,8 @@ def load_model():
 
 model = load_model()
 
-st.title("Customer Loan Risk Prediction")
+st.title("LendIQ")
+st.caption("ML for loan risk assessment and loss minimization")
 st.write(
     "Enter an applicant's details below. The model predicts the probability that "
     "they will **default** on the loan, and gives an approve/reject decision based on "

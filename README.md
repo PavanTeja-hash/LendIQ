@@ -1,8 +1,10 @@
-# Customer Loan Risk Prediction System
+# LendIQ
+
+### ML for loan risk assessment and loss minimization
 
 ### 🔗 [**► Try the live app**](https://customer-loan-risk-prediction-system-97fp9tmbut7vuugqvnyqqh.streamlit.app/) &nbsp;|&nbsp; enter an applicant's details and get an instant risk prediction
 
-A machine learning system that predicts customer loan-default risk from financial and demographic data, to support lending decisions. It goes beyond a basic classifier: cross-validated evaluation, hyperparameter tuning, class-imbalance handling, model explainability, business-cost analysis, and a live interactive web app.
+LendIQ predicts customer loan-default risk from financial and demographic data to support lending decisions and reduce credit losses. It goes beyond a basic classifier: cross-validated evaluation, hyperparameter tuning, class-imbalance handling, model explainability, business-cost analysis, and a live interactive web app.
 
 ## Tech Stack
 - Python, Pandas, NumPy
@@ -15,7 +17,7 @@ A machine learning system that predicts customer loan-default risk from financia
 
 ## Project Structure
 ```
-Customer-Loan-Risk-Prediction-System/
+LendIQ/
 ├── app.py                       # Streamlit web app (live prediction demo)
 ├── main.py                      # runs the core pipeline end-to-end
 ├── data/
