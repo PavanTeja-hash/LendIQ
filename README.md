@@ -2,7 +2,7 @@
 
 ### ML for loan risk assessment and loss minimization
 
-### 🔗 [**► Try the live app**](https://lendiq-k6wkxqsivwzntfdrfqfkw3.streamlit.app/) &nbsp;|&nbsp; enter an applicant's details and get an instant risk prediction
+### 🔗 [**► Try the live app**](https://lendiq.streamlit.app/) &nbsp;|&nbsp; enter an applicant's details and get an instant risk prediction
 
 LendIQ predicts customer loan-default risk from financial and demographic data to support lending decisions and reduce credit losses. It goes beyond a basic classifier: cross-validated evaluation, hyperparameter tuning, class-imbalance handling, model explainability, business-cost analysis, and a live interactive web app.
 
